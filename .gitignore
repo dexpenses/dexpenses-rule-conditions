@@ -1,0 +1,17 @@
+## Compiled JavaScript files
+**/*.js
+!sonar.js
+!jest.config.js
+**/*.js.map
+lib/
+
+# Test coverage
+coverage/
+
+# Typescript v1 declaration files
+typings/
+
+node_modules/
+
+.scannerwork/
+.sonar/
