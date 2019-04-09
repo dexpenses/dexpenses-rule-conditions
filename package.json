@@ -1,6 +1,7 @@
 {
   "name": "@dexmo/dexpenses-rule-conditions",
-  "version": "1.0.0",
+  "description": "Condition engine and parser for Dexpenses rules",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": {
@@ -15,13 +16,16 @@
     "url": "https://github.com/dexmo007/dexpenses-rule-conditions/issues"
   },
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "tslint --force --project tsconfig.json",
     "lint:sonar": "yarn lint --format json --out .sonar/tslint-report.json",
     "build": "tsc",
     "test": "jest",
-    "test:coverage": "jest --silent --coverage --collect-coverage-from=src/**"
+    "test:coverage": "jest --silent --coverage --collect-coverage-from=src/**",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint",
+    "preversion": "yarn lint"
   },
   "devDependencies": {
     "@types/google__maps": "^0.5.5",
@@ -41,6 +45,6 @@
     "luxon": "^1.12.1"
   },
   "files": [
-    "src/*"
+    "lib/**/*"
   ]
 }
