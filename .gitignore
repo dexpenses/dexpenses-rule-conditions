@@ -1,9 +1,5 @@
 ## Compiled JavaScript files
-**/*.js
-!sonar.js
-!jest.config.js
-**/*.js.map
-lib/
+/lib
 
 # Test coverage
 coverage/
@@ -15,3 +11,6 @@ node_modules/
 
 .scannerwork/
 .sonar/
+
+
+yarn-error.log
