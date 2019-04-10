@@ -13,6 +13,6 @@
     "experimentalDecorators": true
   },
   "compileOnSave": true,
-  "include": ["src", "test"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
