@@ -8,6 +8,7 @@ require('sonarqube-scanner')(
     token: process.env.SONAR_TOKEN,
     options: {
       'sonar.organization': 'dexmo007-github',
+      'sonar.projectKey': 'dexpenses-rule-conditions',
       'sonar.sources': 'src/',
       'sonar.exclusions': 'node_modules/**,sonar.js,**/*.spec.ts',
       'sonar.typescript.tslint.reportPaths': '.sonar/tslint-report.json',
