@@ -1,0 +1,27 @@
+sudo: false
+language: node_js
+node_js:
+  - '8'
+  - '10'
+  - '11'
+cache:
+  yarn: true
+  directories:
+    - '$HOME/.sonar'
+env:
+  global:
+    secure: IpUl0az2IlY8N5nESYzNvsXjR1MKLQ5Q0JtbJ8ZqzSUCwUx4SN0em/GgWW17fprTr7FtfM1Hw2zm743eXN15xJr5M5Qj+GwGxtn4lNevDxjX64rMRyWpe0VBK2fhusUwiZGYrPFJfJsZXs8PE6Dvf8otaPSCu+6ggg4sWFevA3HxtEySHExl8DBDvQh5uX1xiscSXaPLeN68aUufPuhOyAvNW0INVrenQ4L8gSXaGlzvtJrbA0sEnIv3MOoYZ0GfAvvzFvk4a1PtNRcFjptMdzUXaG+dHMggUsiisGb039ngwJTFINEM/agRcxSIojVatUvb+HT/s4nDU1WKbx6fgTdP38pRkSpBDV5BrvN0nclhRASty9EsEqQ9Nvfvn2w2lzoo64dGNT1GEeYM9y6qZjoqn4Iw/WtTCU7hTHRRrN2yvo9yQxcglTQf1M1604CP2WfM+uuQE2edPFfXtIQQHULcYU6B8yUHpRCz0N98lrYp7ocBZD/dAwzLJ7uotmCUsi+OrEHXvERBpnxlgirQEYq6lt59psIQTodd2N7fzUvG1KYz6xva19slwbO2IQmWWfYqWeEno3oE0Dbr2ZHfXqenQmchmSDJuDx//WEjRAjHoO7wGhiPe9y994mfDZEkthZe2gn4SNBbrXQ6K0utLFCyAXT7xj+95HjT/5cHoNY=
+install:
+  - yarn
+script:
+  - yarn test
+  - yarn build
+jobs:
+  include:
+    - stage: sonar
+      script:
+        - yarn test:coverage
+        - yarn lint:sonar
+        - node sonar.js
+      node_js:
+        - '11'
