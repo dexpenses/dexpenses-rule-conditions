@@ -1,6 +1,10 @@
 import { PlaceDetailsResult, GeocodingResult } from '@google/maps';
 import { Time } from './Time';
 
+export interface Timestamp {
+  toDate(): Date;
+}
+
 export interface Address {
   city?: string;
   street?: string;
@@ -11,7 +15,7 @@ export default interface Receipt {
   time?: Time;
   phone?: string;
   paymentMethod?: string;
-  date?: Date;
+  date?: Date | Timestamp;
   amount?: { value: number; currency: string };
   address?: Address;
   timestamp?: Date;

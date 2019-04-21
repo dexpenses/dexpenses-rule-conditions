@@ -1,13 +1,13 @@
 import { DateTime } from 'luxon';
 import Condition from './Condition';
 import { Operator, parseOperator } from './Operator';
-import Receipt from './Receipt';
+import Receipt, { Timestamp } from './Receipt';
 
 export default class DateCondition implements Condition {
   private cmp: (x: number, y: number) => boolean;
 
   constructor(
-    private dateField: keyof DateTime,
+    private dateField: keyof DateTime & string,
     op: Operator,
     private value: number
   ) {
@@ -18,9 +18,15 @@ export default class DateCondition implements Condition {
     if (!receipt.date) {
       return false;
     }
-    const dt = DateTime.fromJSDate(receipt.date, {
+    const date = (receipt.date as Timestamp).toDate
+      ? (receipt.date as Timestamp).toDate()
+      : (receipt.date as Date);
+    const dt = DateTime.fromJSDate(date, {
       zone: 'Europe/Berlin',
     });
+    if (!dt.isValid) {
+      return false;
+    }
     const field = dt[this.dateField];
     if (!field) {
       throw new Error('unknown date time field: ' + this.dateField);

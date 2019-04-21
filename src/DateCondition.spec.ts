@@ -33,6 +33,16 @@ describe('DateCondition', () => {
         date: DateTime.fromISO('2019-04-03T00:00:00.000+01:00').toJSDate(),
       })
     ).toBeTruthy();
+
+    expect(
+      isWednesday.test({
+        date: {
+          toDate() {
+            return DateTime.fromISO('2019-04-03T00:00:00.000+01:00').toJSDate();
+          },
+        },
+      })
+    ).toBeTruthy();
   });
 
   it('should decide correctly for month', () => {
