@@ -1,6 +1,6 @@
 import AndCondition from './AndCondition';
 import Condition from '../Condition';
-import Receipt from '../../Receipt';
+import { Receipt } from '@dexpenses/core';
 
 class MockCondition implements Condition {
   constructor(public test: (r: Receipt) => boolean) {}

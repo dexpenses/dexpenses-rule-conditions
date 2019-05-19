@@ -7,19 +7,19 @@ import CurrencyCondition from './condition/CurrencyCondition';
 import DateCondition from './condition/DateCondition';
 import TimeCondition from './condition/TimeCondition';
 import PaymentMethodCondition from './condition/PaymentMethodCondition';
-import { Time } from './Time';
-
-function parseTime(timeString: string): Time {
-  const [hour, minute, second] = timeString.split(':');
-  return {
-    hour: parseInt(hour, 10),
-    minute: parseInt(minute, 10),
-    second: !second ? undefined : parseInt(second, 10),
-  };
-}
+import { Time } from '@dexpenses/core';
+import PlaceTypeCondition from './condition/PlaceTypeCondition';
+import PlaceTypeCategoryCondition from './condition/PlaceTypeCategoryCondition';
 
 export function parseCondition(json: any) {
-  const [key, value]: [string, any] = Object.entries(json)[0];
+  const entries = Object.entries(json);
+  if (entries.length === 0) {
+    throw new Error('Expected condition but got {}');
+  }
+  if (entries.length > 1) {
+    throw new Error('Condition can only have a single entry');
+  }
+  const [key, value]: [string, any] = entries[0];
   switch (key) {
     case '$and':
       return new AndCondition(value.map(parseCondition));
@@ -42,7 +42,11 @@ export function parseCondition(json: any) {
       return new DateCondition(dateField, dop, dn);
     case 'time':
       const [type, tn] = value;
-      return new TimeCondition(parseTime(tn), type);
+      return new TimeCondition(Time.parse(tn), type);
+    case 'placeType':
+      return new PlaceTypeCondition(value);
+    case 'placeTypeCategory':
+      return new PlaceTypeCategoryCondition(value);
     default:
       throw new Error('unknown key: ' + key);
   }

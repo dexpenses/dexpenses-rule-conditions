@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 import Condition from './Condition';
 import { Operator, parseOperator } from '../Operator';
-import Receipt, { Timestamp } from '../Receipt';
+import { Receipt } from '@dexpenses/core';
 
 export default class DateCondition implements Condition {
   private cmp: (x: number, y: number) => boolean;
@@ -18,9 +18,7 @@ export default class DateCondition implements Condition {
     if (!receipt.date) {
       return false;
     }
-    const date = (receipt.date as Timestamp).toDate
-      ? (receipt.date as Timestamp).toDate()
-      : (receipt.date as Date);
+    const date = Receipt.getDate(receipt)!;
     const dt = DateTime.fromJSDate(date, {
       zone: 'Europe/Berlin',
     });

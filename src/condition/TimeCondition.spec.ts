@@ -2,12 +2,18 @@ import TimeCondition from './TimeCondition';
 
 describe('TimeCondition', () => {
   it('should be false if absent', () => {
-    const condition = new TimeCondition({ hour: 16, minute: 0 }, 'after');
+    const condition = new TimeCondition(
+      { hour: 16, minute: 0, second: null },
+      'after'
+    );
     expect(condition.test({})).toBeFalsy();
   });
 
   it('should match decide correctly with after', () => {
-    const condition = new TimeCondition({ hour: 16, minute: 0 }, 'after');
+    const condition = new TimeCondition(
+      { hour: 16, minute: 0, second: null },
+      'after'
+    );
 
     expect(
       condition.test({
@@ -24,6 +30,7 @@ describe('TimeCondition', () => {
         time: {
           hour: 16,
           minute: 0,
+          second: null,
         },
       })
     ).toBeTruthy();
@@ -40,7 +47,10 @@ describe('TimeCondition', () => {
   });
 
   it('should match decide correctly with before', () => {
-    const condition = new TimeCondition({ hour: 16, minute: 0 }, 'before');
+    const condition = new TimeCondition(
+      { hour: 16, minute: 0, second: null },
+      'before'
+    );
 
     expect(
       condition.test({
@@ -57,6 +67,7 @@ describe('TimeCondition', () => {
         time: {
           hour: 16,
           minute: 0,
+          second: null,
         },
       })
     ).toBeFalsy();

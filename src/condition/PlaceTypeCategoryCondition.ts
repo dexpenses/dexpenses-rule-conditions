@@ -1,6 +1,5 @@
 import Condition from './Condition';
-import Receipt from '../Receipt';
-import placeTypes from '../place-types';
+import { Receipt, applyPlaceTypeMappings } from '@dexpenses/core';
 
 export default class PlaceTypeCategoryCondition implements Condition {
   constructor(private placeTypeCategory: string) {}
@@ -9,8 +8,8 @@ export default class PlaceTypeCategoryCondition implements Condition {
     if (!receipt.place) {
       return false;
     }
-    return receipt.place.types
-      .map((pt) => placeTypes[pt])
-      .includes(this.placeTypeCategory);
+    return applyPlaceTypeMappings(receipt.place.types).has(
+      this.placeTypeCategory
+    );
   }
 }

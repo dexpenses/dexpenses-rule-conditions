@@ -1,6 +1,6 @@
 import Condition from './Condition';
 import { Operator, parseOperator } from '../Operator';
-import Receipt from '../Receipt';
+import { Receipt } from '@dexpenses/core';
 
 export default class AmountCondition implements Condition {
   private cmp: (x: number, y: number) => boolean;

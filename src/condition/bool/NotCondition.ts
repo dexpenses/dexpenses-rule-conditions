@@ -1,5 +1,5 @@
 import Condition from '../Condition';
-import Receipt from '../../Receipt';
+import { Receipt } from '@dexpenses/core';
 
 export default class NotCondition implements Condition {
   constructor(private condition: Condition) {}
