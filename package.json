@@ -42,7 +42,7 @@
   "dependencies": {
     "@dexpenses/core": "^1.0.0",
     "core-js": "^3.0.1",
-    "luxon": "^1.14.0"
+    "luxon": "^1.15.0"
   },
   "files": [
     "lib/**/*"
