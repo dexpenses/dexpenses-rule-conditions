@@ -6,7 +6,6 @@ node_js:
   - '11'
 cache:
   yarn: true
-
 install:
   - yarn
 script:
@@ -15,14 +14,14 @@ script:
 jobs:
   include:
     - stage: sonar
+      node_js:
+        - '11'
       addons:
         sonarcloud:
-          organization: 'dexmo007-github'
+          organization: dexmo007-github
           token:
-            secure: IpUl0az2IlY8N5nESYzNvsXjR1MKLQ5Q0JtbJ8ZqzSUCwUx4SN0em/GgWW17fprTr7FtfM1Hw2zm743eXN15xJr5M5Qj+GwGxtn4lNevDxjX64rMRyWpe0VBK2fhusUwiZGYrPFJfJsZXs8PE6Dvf8otaPSCu+6ggg4sWFevA3HxtEySHExl8DBDvQh5uX1xiscSXaPLeN68aUufPuhOyAvNW0INVrenQ4L8gSXaGlzvtJrbA0sEnIv3MOoYZ0GfAvvzFvk4a1PtNRcFjptMdzUXaG+dHMggUsiisGb039ngwJTFINEM/agRcxSIojVatUvb+HT/s4nDU1WKbx6fgTdP38pRkSpBDV5BrvN0nclhRASty9EsEqQ9Nvfvn2w2lzoo64dGNT1GEeYM9y6qZjoqn4Iw/WtTCU7hTHRRrN2yvo9yQxcglTQf1M1604CP2WfM+uuQE2edPFfXtIQQHULcYU6B8yUHpRCz0N98lrYp7ocBZD/dAwzLJ7uotmCUsi+OrEHXvERBpnxlgirQEYq6lt59psIQTodd2N7fzUvG1KYz6xva19slwbO2IQmWWfYqWeEno3oE0Dbr2ZHfXqenQmchmSDJuDx//WEjRAjHoO7wGhiPe9y994mfDZEkthZe2gn4SNBbrXQ6K0utLFCyAXT7xj+95HjT/5cHoNY=
+            secure: qQYSxqC+myuocMzt9hGzyO/ATf16Q+aLPK0K1+Gn4o5hjPpziHuX5Pe5kLQav4qrgB0z1VM4ZueXh8XaIwjk6zYi+eZXDL8zfIC2ksoGfBViGKhlu+qxi4NCd6DG8v7C6W0oXnRkzY6+j9Jx6N5dN0OtrZ6xscz6/POGvCexiCMwmApxCjPbdWmcsWt22O7lP0CDZEQQAnK4Nl5SrlhA/pfIRCDFFTKxN8esM1x1mKgjZpL4NeKROoZrafCdkye5FNPf13nkHEnQHZWnx8mSQmMgXQWAnmgiCRPlNVIYYKewLXRuCIpYRKfXD44P1oM7TWJ/g4rD97Gzm5Tj74vhbvF2zFFGLK7WRMA/Sctywx77HaCu3qp8AmfgKEJkHBSlvb9YAfwYI4FoKJAKNYEv0n9WzoQukUoeoFAbtVOZTkMv7c/HwguPa+uSINX+Tgsr2kbyWEx19PadUQpQOS8BlGXMH4jFZnNsNZEOFsjLd8ZxzC6K/RakcVtwFbfZ41zT1dMZcxbtuI1cXpfc7Tj2j6XR1YhFaZgDi92y7AfOW5aIR3cfkLGo8nr++VTrzRBLOza/kjstxHgGxm5bjq0xhiJVETyfLZk3Syp/3sm4VZsBFuVVw9G28Ll631/36CKp0ALs8M/J9pggpoCACyYTmcGZDQAfJ2aPgADSDsV6h+0=
       script:
         - yarn test:coverage
         - yarn lint:sonar
         - sonar-scanner
-      node_js:
-        - '11'
