@@ -1,6 +1,6 @@
 import Condition from './Condition';
-import Receipt from './Receipt';
-import { Time } from './Time';
+import Receipt from '../Receipt';
+import { Time } from '../Time';
 
 function seconds(time: Time): number {
   return time.hour * 60 * 60 + time.minute * 60 + (time.second || 0);

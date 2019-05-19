@@ -1,12 +1,12 @@
-import AndCondition from './AndCondition';
-import OrCondition from './OrCondition';
-import NotCondition from './NotCondition';
-import HeaderCondition from './HeaderCondition';
-import AmountCondition from './AmountCondition';
-import CurrencyCondition from './CurrencyCondition';
-import DateCondition from './DateCondition';
-import TimeCondition from './TimeCondition';
-import PaymentMethodCondition from './PaymentMethodCondition';
+import AndCondition from './condition/bool/AndCondition';
+import OrCondition from './condition/bool/OrCondition';
+import NotCondition from './condition/bool/NotCondition';
+import HeaderCondition from './condition/HeaderCondition';
+import AmountCondition from './condition/AmountCondition';
+import CurrencyCondition from './condition/CurrencyCondition';
+import DateCondition from './condition/DateCondition';
+import TimeCondition from './condition/TimeCondition';
+import PaymentMethodCondition from './condition/PaymentMethodCondition';
 import { Time } from './Time';
 
 function parseTime(timeString: string): Time {

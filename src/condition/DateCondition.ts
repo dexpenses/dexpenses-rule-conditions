@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 import Condition from './Condition';
-import { Operator, parseOperator } from './Operator';
-import Receipt, { Timestamp } from './Receipt';
+import { Operator, parseOperator } from '../Operator';
+import Receipt, { Timestamp } from '../Receipt';
 
 export default class DateCondition implements Condition {
   private cmp: (x: number, y: number) => boolean;

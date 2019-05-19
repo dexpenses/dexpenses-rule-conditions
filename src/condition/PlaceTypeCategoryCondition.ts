@@ -1,6 +1,6 @@
 import Condition from './Condition';
-import Receipt from './Receipt';
-import placeTypes from './place-types';
+import Receipt from '../Receipt';
+import placeTypes from '../place-types';
 
 export default class PlaceTypeCategoryCondition implements Condition {
   constructor(private placeTypeCategory: string) {}

@@ -1,6 +1,6 @@
 import OrCondition from './OrCondition';
-import Condition from './Condition';
-import Receipt from './Receipt';
+import Condition from '../Condition';
+import Receipt from '../../Receipt';
 
 class MockCondition implements Condition {
   constructor(public test: (r: Receipt) => boolean) {}

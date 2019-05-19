@@ -1,20 +1,20 @@
 import { parseCondition } from './parse';
-import AmountCondition from './AmountCondition';
-import CurrencyCondition from './CurrencyCondition';
-import HeaderCondition from './HeaderCondition';
-import AndCondition from './AndCondition';
-import PaymentMethodCondition from './PaymentMethodCondition';
-import OrCondition from './OrCondition';
-import NotCondition from './NotCondition';
-import DateCondition from './DateCondition';
-import TimeCondition from './TimeCondition';
+import AmountCondition from './condition/AmountCondition';
+import CurrencyCondition from './condition/CurrencyCondition';
+import HeaderCondition from './condition/HeaderCondition';
+import AndCondition from './condition/bool/AndCondition';
+import PaymentMethodCondition from './condition/PaymentMethodCondition';
+import OrCondition from './condition/bool/OrCondition';
+import NotCondition from './condition/bool/NotCondition';
+import DateCondition from './condition/DateCondition';
+import TimeCondition from './condition/TimeCondition';
 
-jest.mock('./AmountCondition');
-jest.mock('./CurrencyCondition');
-jest.mock('./DateCondition');
-jest.mock('./HeaderCondition');
-jest.mock('./PaymentMethodCondition');
-jest.mock('./TimeCondition');
+jest.mock('./condition/AmountCondition');
+jest.mock('./condition/CurrencyCondition');
+jest.mock('./condition/DateCondition');
+jest.mock('./condition/HeaderCondition');
+jest.mock('./condition/PaymentMethodCondition');
+jest.mock('./condition/TimeCondition');
 
 beforeEach(() => {
   (AmountCondition as any).mockClear();

@@ -1,5 +1,5 @@
 import Condition from './Condition';
-import Receipt from './Receipt';
+import Receipt from '../Receipt';
 
 export default class PaymentMethodCondition implements Condition {
   constructor(private paymentMethod: string) {}

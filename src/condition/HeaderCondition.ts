@@ -1,5 +1,5 @@
 import Condition from './Condition';
-import Receipt from './Receipt';
+import Receipt from '../Receipt';
 
 export default class HeaderCondition implements Condition {
   constructor(private searchString: string, private caseSensitive = false) {}

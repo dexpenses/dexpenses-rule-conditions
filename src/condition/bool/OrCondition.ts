@@ -1,5 +1,5 @@
-import Condition from './Condition';
-import Receipt from './Receipt';
+import Condition from '../Condition';
+import Receipt from '../../Receipt';
 
 export default class OrCondition implements Condition {
   constructor(private conditions: Condition[]) {}
