@@ -140,9 +140,9 @@
     minimist "^1.2.0"
 
 "@dexpenses/core@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@dexpenses/core/-/core-1.0.1.tgz#2d971ca0f2e14516101cedfa00d81d872e7321ed"
-  integrity sha512-OdrwhaxYvAvsaJwXarJIepf5jZnS039/RzdA+uhb1ctJvRGe2kve7Gy8ctNDwxECL0LvbEjrrkrRVZOHfA3GnQ==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@dexpenses/core/-/core-1.0.2.tgz#d752ddf9c3a45de1ad40c55efd28fabefa3b8eb8"
+  integrity sha512-61oz590bPIO5mAVIJwr3kFQ1NdFBjG5MbjPZ+SoIGGt+yTO0yh9AqgwZdO1fSVEMeq83bwh2hcdTn6MdgYn1JQ==
 
 "@jest/console@^24.7.1":
   version "24.7.1"
