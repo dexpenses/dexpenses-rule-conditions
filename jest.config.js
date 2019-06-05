@@ -1,6 +1,6 @@
 module.exports = {
   roots: ['<rootDir>/src'],
-  setupFiles: ['<rootDir>/src/setup.ts'],
+  setupFiles: ['<rootDir>/test/setup.ts'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },

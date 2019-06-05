@@ -12,3 +12,11 @@
 or
 
 `yarn add @dexpenses/rule-conditions`
+
+## Polyfill
+
+Uses `Array.prototype.flatMap` which means a polyfill may be needed:
+
+`yarn add core-js`
+
+Then `import 'core-js/modules/es.array.flat-map';` at some point.
