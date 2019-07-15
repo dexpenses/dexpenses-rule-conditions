@@ -18,7 +18,7 @@ jobs:
         - '11'
       addons:
         sonarcloud:
-          organization: dexmo007-github
+          organization: dexpenses
           token:
             secure: qQYSxqC+myuocMzt9hGzyO/ATf16Q+aLPK0K1+Gn4o5hjPpziHuX5Pe5kLQav4qrgB0z1VM4ZueXh8XaIwjk6zYi+eZXDL8zfIC2ksoGfBViGKhlu+qxi4NCd6DG8v7C6W0oXnRkzY6+j9Jx6N5dN0OtrZ6xscz6/POGvCexiCMwmApxCjPbdWmcsWt22O7lP0CDZEQQAnK4Nl5SrlhA/pfIRCDFFTKxN8esM1x1mKgjZpL4NeKROoZrafCdkye5FNPf13nkHEnQHZWnx8mSQmMgXQWAnmgiCRPlNVIYYKewLXRuCIpYRKfXD44P1oM7TWJ/g4rD97Gzm5Tj74vhbvF2zFFGLK7WRMA/Sctywx77HaCu3qp8AmfgKEJkHBSlvb9YAfwYI4FoKJAKNYEv0n9WzoQukUoeoFAbtVOZTkMv7c/HwguPa+uSINX+Tgsr2kbyWEx19PadUQpQOS8BlGXMH4jFZnNsNZEOFsjLd8ZxzC6K/RakcVtwFbfZ41zT1dMZcxbtuI1cXpfc7Tj2j6XR1YhFaZgDi92y7AfOW5aIR3cfkLGo8nr++VTrzRBLOza/kjstxHgGxm5bjq0xhiJVETyfLZk3Syp/3sm4VZsBFuVVw9G28Ll631/36CKp0ALs8M/J9pggpoCACyYTmcGZDQAfJ2aPgADSDsV6h+0=
       script:
