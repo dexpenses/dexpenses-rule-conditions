@@ -42,8 +42,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@dexpenses/core": "^1.1.0",
-    "luxon": "^1.16.1"
+    "@dexpenses/core": "^1.2.2",
+    "luxon": "^1.17.1"
   },
   "files": [
     "lib/**/*"
