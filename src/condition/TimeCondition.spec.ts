@@ -9,6 +9,16 @@ describe('TimeCondition', () => {
     expect(condition.test({})).toBeFalsy();
   });
 
+  it('should throw error for unknown type', () => {
+    expect(
+      () =>
+        new TimeCondition(
+          { hour: 16, minute: 0, second: null },
+          'unknown' as any
+        )
+    ).toThrowError(/unknown compare type/);
+  });
+
   it('should match decide correctly with after', () => {
     const condition = new TimeCondition(
       { hour: 16, minute: 0, second: null },
