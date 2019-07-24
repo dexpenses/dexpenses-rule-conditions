@@ -25,6 +25,11 @@ describe('DateCondition', () => {
     ).toThrowError(/not a numeric field/);
   });
 
+  it('should be false for on invalid date', () => {
+    const condition = new DateCondition('weekdayLong', '==', 1);
+    expect(condition.test({ date: new Date(NaN) })).toBe(false);
+  });
+
   it('should decide correctly for weekday', () => {
     const isWednesday = new DateCondition('weekday', '==', 3);
 
