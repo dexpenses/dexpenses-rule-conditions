@@ -1,7 +1,7 @@
 {
   "name": "@dexpenses/rule-conditions",
   "description": "Condition engine and parser for Dexpenses rules",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": {
